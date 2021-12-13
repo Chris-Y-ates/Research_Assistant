@@ -1,12 +1,12 @@
 # Research_Assistant
 
-Introduction
+**Introduction**
 
-How to Setup
+**How to Setup**
 
-Class and Properties
+**Class and Properties**
 
-Reusability/Maintainability
+**Reusability/Maintainability**
 
-Testing
+**Testing**
 
