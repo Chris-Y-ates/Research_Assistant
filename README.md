@@ -34,5 +34,3 @@ Alot of the code can be reused or altered if further functionality is required.
 
 For example, if a user would like to see further options on the home screen, the files could be easily changed to accommodate this by either adding further methods in the classes or be resuing them with inheritance.
 
-**Testing**
-
