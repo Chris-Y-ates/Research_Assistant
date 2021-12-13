@@ -1,0 +1,57 @@
+#!/usr/bin/env php
+<?php
+
+require_once 'classes.php'; //links to the classes file
+
+$csvFile = file('services.csv'); //sets the variable to locate the CSV file
+$line='undefined'; //initalises this variable to be passed to the class constructor
+$tbl = new Console_Table(); //creates table object to be passed to constructor
+
+//set the welcome message
+
+echo ' 
+Welcome to the Catalogue Assistant. 
+
+Select 1, 2 or 3 from the list below and hit enter.
+
+[1] All Data for All Countries 
+[2] All Data for a Specific Country
+[3] Data on Number of Services in a Specific Country
+
+';
+
+$option = readline('Enter Your Selection Here: '); //usr selects service
+
+if ($option == 1){ //if option 1 is selected all data is returned
+    
+    $tbl1 = new Table($csvFile,$option,$tbl); //calls constructor and passes variables
+    echo $tbl1->setHeads();  //sets the table headings as per setHeads method
+    echo $tbl1->option_one(); //sets the table body as per option_one method
+
+} elseif ($option == 2 || $option == 3){
+
+    //both option 2 and 3 ask for a country code
+
+    $country = readline('Enter the 2 Character Country Code: ');
+    $country = strtoupper($country); //set to uppercase for aesthetic purposes
+
+    if ($option == 2){
+
+        $tbl2 = new Table($csvFile,$option,$tbl,$country); 
+        echo $tbl2->setHeads(); //sets headings as per method
+        echo $tbl2->option_two(); //sets body as per method
+        
+    } elseif ($option == 3){
+
+        $tbl3 = new Table($csvFile,$option,$tbl,$country);
+        echo $tbl3->setHeads(); //sets headings as per method
+        echo $tbl3->option_three(); //sets body as per method   
+    } 
+} else {
+    
+    //if any input other than 1,2 or 3 is entered
+
+    echo 'ERROR! The options are 1, 2 or 3 only followed by the return button.
+    ' .PHP_EOL;
+}
+?>
