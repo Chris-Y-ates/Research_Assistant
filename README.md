@@ -14,7 +14,7 @@ Follow this link https://github.com/Chris-Y-ates/Research_Assistant.git to downl
 
 Once you have saved this folder in the directory of your choice, the computer terminal needs to be opened up.
 
-The directory then needs to be changed into the directory where the folder has been saved by running cd~/instructERIC-Assessment.
+The directory then needs to be changed on the terminal into the directory where the folder has been saved.
 
 After this has been completed the program can be run by entering "php start" on the terminal and pressing enter.
 
